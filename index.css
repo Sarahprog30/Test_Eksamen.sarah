@@ -1,0 +1,145 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+header {
+    width: 100%;
+    background-color: #6de3d5;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    color: #004142;
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+/* NAVIGATION */
+nav {
+    background-color: #8cffdb;
+    padding: 12px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #004142;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main content */
+main {
+    padding: 40px;
+    text-align: center;
+}
+
+main h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+main p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #6de3d5;
+    text-align: center;
+    color: #004142;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Dropdown container */
+.dropdown {
+    position: relative; /* nødvendig for absolute positioning av menyen */
+}
+
+/* Dropdown-menyen er skjult som standard */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* plasser rett under nav-knappen for å unngå gap */
+    left: 0;
+    background-color: #8cffdb; /* samme farge som navigasjon */
+    min-width: 180px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 100;
+    padding: 0;
+}
+
+/* Listeelementer */
+.dropdown-content li {
+    list-style: none;
+}
+
+/* Lenker i dropdown */
+.dropdown-content li a {
+    display: block;
+    padding: 10px;
+    color: #004142;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hover-effekt på linkene */
+.dropdown-content li a:hover {
+    background-color: #6de3d5;
+}
+
+/* Viser dropdown når musepekeren er over hele dropdown-containeren */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

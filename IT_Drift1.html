@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT-Drift</title>
+    <link rel="stylesheet" href="IT_Drift.css">
+</head>
+<body>
+
+    <!-- Felles header -->
+<header>
+    <h1>Velkommen til IT-opplæring</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Hjem</a></li>
+
+            <!-- IT-Drift med dropdown -->
+            <li class="dropdown">
+                <a href="IT_Drift.html" class="dropbtn">IT-Drift</a>
+                <ul class="dropdown-content">
+                    <li><a href="IT_Drift1.html">Brukerveiledning 1</a></li>
+                    <li><a href="IT_Drift2.html">Brukerveiledning 2</a></li>
+                    <li><a href="IT_Drift3.html">Brukerveiledning 3</a></li>
+                    <li><a href="IT_Drift4.html">Brukerveiledning 4</a></li>
+                </ul>
+            </li>
+
+            <li><a href="Fakta_del.html">Faktadel</a></li>
+            <li><a href="Test_degselv.html">Test deg selv</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+
+
+
+
+    <main>
+        <h2>IT-Drift brukerveiledning Oppsett av AD</h2>
+
+        <p>Her kan du legge inn steg-for-steg guider, med bilder og forklaringer.</p>
+
+        <div class="manual-container">
+
+            <!-- MAL FOR BILDE+TEKST – KOPIER 30 GANGER -->
+            <div class="step">
+                <img src="steg1-1.png" alt="Steg bilde">
+                <div class="step-text">
+                    <h3>Steg 1 – Add roles and features</h3>
+                    <p>Klikk på "Add roles and features" i Server Manager. Dette åpner veiviseren hvor du kan legge til nye roller, som Active Directory Domain Services.</p>
+                </div>
+            </div>
+
+                        <!-- MAL FOR BILDE+TEKST – KOPIER 30 GANGER -->
+            <div class="step">
+                <img src="steg1-2.png" alt="Steg bilde">
+                <div class="step-text">
+                    <h3>Steg 2 – Active Directory Domain Services</h3>
+                    <p>Huk av "Active Directory Domain Services" (AD DS). Når vinduet med ekstra info dukker opp, klikker du "Add Features" og deretter "Next".</p>
+                </div>
+            </div>
+
+                        <!-- MAL FOR BILDE+TEKST – KOPIER 30 GANGER -->
+            <div class="step">
+                <img src="steg1-3.png" alt="Steg bilde">
+                <div class="step-text">
+                    <h3>Steg 3 – Fortsett i veiviseren</h3>
+                    <p>Se gjennom informasjonen i sammendraget. Pass på at ingenting uventet er valgt. Klikk deretter "Next" for å gå videre.</p>
+                </div>
+            </div>
+
+                                    <!-- MAL FOR BILDE+TEKST – KOPIER 30 GANGER -->
+            <div class="step">
+                <img src="steg1-4.png" alt="Steg bilde">
+                <div class="step-text">
+                    <h3>Steg 4 – Bekreft installasjon</h3>
+                    <p>På installasjonssiden skal du bare kontrollere at AD DS fortsatt er valgt. Klikk "Next"</p>
+                </div>
+            </div>
+
+                                    <!-- MAL FOR BILDE+TEKST – KOPIER 30 GANGER -->
+            <div class="step">
+                <img src="steg1-5.png" alt="Steg bilde">
+                <div class="step-text">
+                    <h3>Steg 5 – Promote this server to a domain controller</h3>
+                    <p>Huk av "Restart the destination server atuomatically if requierd", Deretter klikk  Yes, også klikker du på install.</p>
+                </div>
+            </div>
+            
+            
+            <!-- MAL FOR BILDE+TEKST – KOPIER 30 GANGER -->
+            <div class="step">
+                <img src="steg1-6.jpg" alt="Steg bilde">
+                <div class="step-text">
+                    <h3>Steg 6 – Legg til nytt domene</h3>
+                    <p>Følg med og pass på at det står "Installation succeeded"<br>
+                   Deretter klikk "Close"</p>
+                </div>
+            </div>
+
+            
+            <!-- MAL FOR BILDE+TEKST – KOPIER 30 GANGER -->
+            <div class="step">
+                <img src="steg1-7.png" alt="Steg bilde">
+                <div class="step-text">
+                    <h3>Steg 7 – Domain Controller Options</h3>
+                    <p>Når AD DS og DHCP-rollene vises som grønne, betyr det at de fungerer som de skal. Du skal bare kontrollere at alt er i orden – ingen feil eller varsler.<br>
+                   </p>
+                </div>
+            </div>
+
+            
+            <!-- MAL FOR BILDE+TEKST – KOPIER 30 GANGER -->
+            <div class="step">
+                <img src="steg1-8.png" alt="Steg bilde">
+                <div class="step-text">
+                    <h3>Steg 8 – Varsling</h3>
+                    <p>Hvis du har dette varseltegnet på flagget. Trykk på flagget.</p>
+                </div>
+            </div>
+
+            
+            <!-- MAL FOR BILDE+TEKST – KOPIER 30 GANGER -->
+            <div class="step">
+                <img src="steg1-9.jpg" alt="Steg bilde">
+                <div class="step-text">
+                    <h3>Steg 9 – Promote this server to a domain controller</h3>
+                    <p>Varslingen vil dukke opp. trykk på "Promote tihs server to a domain controller"</p>
+                </div>
+            </div>
+
+            
+            <!-- MAL FOR BILDE+TEKST – KOPIER 30 GANGER -->
+            <div class="step">
+                <img src="steg1-10.png" alt="Steg bilde">
+                <div class="New forest">
+                    <h3>Steg 10 – Deployment configuration</h3>
+                    <p>Denne siden vil åpne seg. huk av "Add a new forest". Kall den for "ad.domain", deretter klikekr du next</p>
+                </div>
+            </div>
+
+            
+            <!-- MAL FOR BILDE+TEKST – KOPIER 30 GANGER -->
+            <div class="step">
+                <img src="steg1-11.jpg" alt="Steg bilde">
+                <div class="step-text">
+                    <h3>Steg 11 – Domain controller options</h3>
+                    <p>Pass på at  forest functional level og  Domain functional level er begge sotte til "Windows Server 2025".</p><br><p>Deretter må du skrive inn ett passord, det bør du notere ned for å være helt sikker. </p><br><p>Deretter klikker du på "Next".</p>
+                </div>
+            </div>
+
+            
+            <!-- MAL FOR BILDE+TEKST – KOPIER 30 GANGER -->
+            <div class="step">
+                <img src="steg1-12.png" alt="Steg bilde">
+                <div class="step-text">
+                    <h3>Steg 12 – DNS Options</h3>
+                    <p>Klikk "Next" for å gå videre.</p>
+                </div>
+            </div>
+
+            
+            <!-- MAL FOR BILDE+TEKST – KOPIER 30 GANGER -->
+            <div class="step">
+                <img src="steg1-13.png" alt="Steg bilde">
+                <div class="step-text">
+                    <h3>Steg 13 – Additional Options</h3>
+                    <p>Skriv inn navnet "AD" derette klikker du "Next".</p>
+                </div>
+            </div>
+            
+            <!-- MAL FOR BILDE+TEKST – KOPIER 30 GANGER -->
+            <div class="step">
+                <img src="steg1-14.jpg" alt="Steg bilde">
+                <div class="step-text">
+                    <h3>Steg 14 – Paths</h3>
+                    <p>Sett alle valgene til å matche valgene på skjermen. Pass på at alt stemmer deretter klikk "Next".</p>
+                </div>
+            </div>
+            
+            <!-- MAL FOR BILDE+TEKST – KOPIER 30 GANGER -->
+            <div class="step">
+                <img src="steg1-15.jpg" alt="Steg bilde">
+                <div class="step-text">
+                    <h3>Steg 15 – Review options</h3>
+                    <p>Klikk på  "View Script"<br> Deretter pass på at det står "Windows PowerShell script for AD DS Deployment"<br> Hvis det stemmer kan du klikke "Next".</p>
+                </div>
+            </div>
+
+            
+            <!-- MAL FOR BILDE+TEKST – KOPIER 30 GANGER -->
+            <div class="step">
+                <img src="steg1-16.png" alt="Steg bilde">
+                <div class="step-text">
+                    <h3>Steg 16 – Perequisites Check</h3>
+                    <p>Klikk "Install"</p>
+                </div>
+            </div>
+            
+            <!-- MAL FOR BILDE+TEKST – KOPIER 30 GANGER -->
+            <div class="step">
+                <img src="steg1-17.png" alt="Steg bilde">
+                <div class="step-text">
+                    <h3>Steg 17 – Reconnect</h3>
+                    <p>Du vil få opp en boks på skjermen<br>
+                    Klikk "Reconnect".</p>
+                </div>
+            </div>
+            
+            <!-- MAL FOR BILDE+TEKST – KOPIER 30 GANGER -->
+            <div class="step">
+                <img src="steg1-18.png" alt="Steg bilde">
+                <div class="step-text">
+                    <h3>Steg 18 – Lyser Grønnt</h3>
+                    <p>Pass på at alle lyser grønt.</p>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer>
+        © 2025 IT-opplæring for VG1
+    </footer>
+
+</body>
+</html>

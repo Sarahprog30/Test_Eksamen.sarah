@@ -1,0 +1,99 @@
+@import url("index.css");
+
+.bilder {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.bilder img {
+    width: 40%;
+    border-radius: 8px;
+}
+
+/* Lesbarhetsboks for fakta-innhold */
+.fakta-content {
+    max-width: 820px;
+    margin: 24px auto;
+    padding: 18px 20px;
+    line-height: 1.6;
+}
+
+.fakta-content h2 {
+    margin-bottom: 14px;
+}
+
+.fakta-section {
+    margin-bottom: 20px;
+}
+
+.fakta-content h3 {
+    margin: 10px 0 8px 0;
+}
+
+.fakta-content p,
+.fakta-content ul {
+    margin-bottom: 10px;
+}
+
+.fakta-content code {
+    background: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Dropdown container */
+.dropdown {
+    position: relative; /* nødvendig for absolute positioning av menyen */
+}
+
+/* Dropdown-menyen er skjult som standard */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* plasser rett under nav-knappen for å unngå gap */
+    left: 0;
+    background-color: #8cffdb; /* samme farge som navigasjon */
+    min-width: 180px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 100;
+    padding: 0;
+}
+
+/* Listeelementer */
+.dropdown-content li {
+    list-style: none;
+}
+
+/* Lenker i dropdown */
+.dropdown-content li a {
+    display: block;
+    padding: 10px;
+    color: #004142;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hover-effekt på linkene */
+.dropdown-content li a:hover {
+    background-color: #6de3d5;
+}
+
+/* Viser dropdown når musepekeren er over hele dropdown-containeren */
+.dropdown:hover .dropdown-content {
+    display: block;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Fakta_del.css">
+    <title>Fakta del</title>
+</head>
+<body>
+<header>
+    <h1>Velkommen til IT-opplæring</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Hjem</a></li>
+            <li class="dropdown">
+                <a href="IT_Drift.html" class="dropbtn">IT-Drift</a>
+                <ul class="dropdown-content">
+                    <li><a href="IT_Drift1.html">Brukerveiledning 1</a></li>
+                    <li><a href="IT_Drift2.html">Brukerveiledning 2</a></li>
+                    <li><a href="IT_Drift3.html">Brukerveiledning 3</a></li>
+                    <li><a href="IT_Drift4.html">Brukerveiledning 4</a></li>
+                </ul>
+            </li>
+            <li><a href="Fakta_del.html">Faktadel</a></li>
+            <li><a href="Test_degselv.html">Test deg selv</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="fakta-content">
+        <h2>Opplæring: IP-adresser og subnettmasker</h2>
+
+        <section class="fakta-section">
+            <h3>Hva er en IP-adresse?</h3>
+            <p>En IP-adresse identifiserer en enhet i et nettverk, som en PC eller mobil. IPv4 består av fire tall (0–255).</p>
+            <p><strong>Eksempel:</strong> <code>192.168.1.10</code></p>
+        </section>
+
+        <section class="fakta-section">
+            <h3>Hva består en IP-adresse av?</h3>
+            <ul>
+                <li><strong>Nettverksdelen</strong> – viser hvilket nettverk enheten er i.</li>
+                <li><strong>Enhetsdelen</strong> – viser selve enheten.</li>
+            </ul>
+        </section>
+
+        <section class="fakta-section">
+            <h3>IP-klasser (A–E)</h3>
+            <p>IP-adresser deles i klasser A–C (vanlig bruk), og D–E for spesielle formål. Se tabellen for detaljer.</p>
+            <p><img src="IP-adresser.png" alt="Tabell over IP-klasser A–E" style="max-width:100%;height:auto;border:1px solid #e6e6e6;border-radius:4px;"></p>
+            <p>IP-kalkulator: <a href="https://www.calculator.net/ip-subnet-calculator.html" target="_blank" rel="noopener">https://www.calculator.net/ip-subnet-calculator.html</a></p>
+        </section>
+
+        <section class="fakta-section">
+            <h3>Hva er en subnettmaske?</h3>
+            <p>Subnettmasken viser hvilke deler av IP-adressen som er nettverk og hvilke som er enhet.</p>
+            <p>Vanlig maske: <code>255.255.255.0</code> – de tre første tallene er nettverket, siste er enheten.</p>
+        </section>
+
+        <section class="fakta-section">
+            <h3>Subnett i binær</h3>
+            <p>Masken er egentlig et mønster med 1 og 0. 1 = nettverk, 0 = enhet. IPv4 har 4 oktetter med 8 biter hver.</p>
+            <p>Eksempel:</p>
+            <pre><code>IP: 192.168.1.10
+Mask: 255.255.255.0
+
+Mask i binær: 11111111.11111111.11111111.00000000</code></pre>
+        </section>
+
+        <section class="fakta-section">
+            <h3>Eksempel på subnett</h3>
+            <p>Liten kontor med 30 enheter. Velg /27 (<code>255.255.255.224</code>) – 32 adresser totalt, 30 brukbare.</p>
+            <p>Eksempelnettverk: <code>192.168.10.0/27</code></p>
+            <ul>
+                <li>Network: <code>192.168.10.0</code></li>
+                <li>Første IP: <code>192.168.10.1</code></li>
+                <li>Siste IP: <code>192.168.10.30</code></li>
+                <li>Broadcast: <code>192.168.10.31</code></li>
+            </ul>
+        </section>
+
+        <section class="fakta-section">
+            <h3>Eksempel</h3>
+            <p>IP-adresse: <code>192.168.1.10</code><br>Subnettmaske: <code>255.255.255.0</code></p>
+            <p>→ Nettverksdel: <code>192.168.1</code><br>→ Enhetsdel: <code>10</code></p>
+        </section>
+
+        <section class="fakta-section">
+            <h3>Hvordan jobber de sammen?</h3>
+            <p>IP-adresse og subnettmaske avgjør om to enheter er i samme nettverk. Hvis nettverksdelen er lik, kan de kommunisere direkte. Ellers må trafikken via ruter.</p>
+        </section>
+
+        <section class="fakta-section">
+            <h3>Kort oppsummert</h3>
+            <ul>
+                <li>IP-adresse identifiserer en enhet.</li>
+                <li>Subnettmasken viser nettverk og enhet.</li>
+                <li>Samme nettverksdel → direkte kommunikasjon.</li>
+                <li>Ellers går trafikken via ruter.</li>
+            </ul>
+        </section>
+    </div>
+
+    <div class="bilder">
+        <img src="bilde1.png" alt="">
+        <img src="bilde2.png" alt="">
+    </div>
+</main>
+
+<footer>
+    © 2025 IT-opplæring for VG1
+</footer>
+
+</body>
+</html>

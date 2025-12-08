@@ -1,0 +1,87 @@
+@import url("index.css");
+
+.quiz-container {
+    background: white;
+    width: 60%;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+/* Quiz styles */
+.question {
+    border-bottom: 1px solid #eee;
+    padding: 12px 0;
+}
+.qnum { font-weight: bold; margin: 0; }
+.qtext { margin: 6px 0 8px 0; }
+.options label { display: block; margin: 6px 0; cursor: pointer; }
+.quiz-actions { margin-top: 16px; }
+#submitBtn, #restartBtn {
+    background: #00b894;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.result { margin-top: 18px; background: #f9f9f9; padding: 12px; border-radius: 8px; }
+.feedback-list { margin: 10px 0 0 0; padding-left: 18px; }
+.feedback-list li.correct { color: green; }
+.feedback-list li.incorrect { color: #c0392b; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Dropdown container */
+.dropdown {
+    position: relative; /* nødvendig for absolute positioning av menyen */
+}
+
+/* Dropdown-menyen er skjult som standard */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* plasser rett under nav-knappen for å unngå gap */
+    left: 0;
+    background-color: #8cffdb; /* samme farge som navigasjon */
+    min-width: 180px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 100;
+    padding: 0;
+}
+
+/* Listeelementer */
+.dropdown-content li {
+    list-style: none;
+}
+
+/* Lenker i dropdown */
+.dropdown-content li a {
+    display: block;
+    padding: 10px;
+    color: #004142;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hover-effekt på linkene */
+.dropdown-content li a:hover {
+    background-color: #6de3d5;
+}
+
+/* Viser dropdown når musepekeren er over hele dropdown-containeren */
+.dropdown:hover .dropdown-content {
+    display: block;
+}

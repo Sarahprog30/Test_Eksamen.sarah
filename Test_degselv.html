@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test deg selv</title>
+    <link rel="stylesheet" href="Test_degselv.css">
+</head>
+<body>
+
+<header>
+    <h1>Velkommen til IT-opplæring</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Hjem</a></li>
+
+            <!-- IT-Drift med dropdown -->
+            <li class="dropdown">
+                <a href="IT_Drift.html" class="dropbtn">IT-Drift</a>
+                <ul class="dropdown-content">
+                    <li><a href="IT_Drift1.html">Brukerveiledning 1</a></li>
+                    <li><a href="IT_Drift2.html">Brukerveiledning 2</a></li>
+                    <li><a href="IT_Drift3.html">Brukerveiledning 3</a></li>
+                    <li><a href="IT_Drift4.html">Brukerveiledning 4</a></li>
+                </ul>
+            </li>
+
+            <li><a href="Fakta_del.html">Faktadel</a></li>
+            <li><a href="Test_degselv.html">Test deg selv</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h2>Quiz – test kunnskapen din</h2>
+
+    <div class="quiz-container">
+            <form id="quizForm">
+                <div id="questions"></div>
+                <div class="quiz-actions">
+                    <button type="button" id="submitBtn">Send inn svar</button>
+                    <button type="button" id="restartBtn" style="display:none;">Prøv igjen</button>
+                </div>
+            </form>
+
+            <div id="result" class="result" aria-live="polite"></div>
+
+            <script>
+                // Quiz data: noen spørsmål endret
+                const quiz = [
+                    {q: 'Hva er formatet for en vanlig IPv4-adresse?', options: ['To tall', 'Tre tall', 'Fire tall (oktetter)', 'Fem tall'], a: 2, explain: 'Fire tall (oktetter), hvert mellom 0 og 255.'},
+                    {q: 'Hvilket av disse er et gyldig eksempel på en IPv4-adresse?', options: ['192.168.1.10', '300.400.500.600', 'abcd::1', '192.168'], a: 0, explain: '192.168.1.10 er et gyldig IPv4-eksempel.'},
+                    {q: 'Hva brukes en subnettmaske til?', options: ['Å kryptere trafikk', 'Å vise hva som er nettverk og hva som er enhet', 'Å endre IP-adresse', 'Å koble to skrivere'], a: 1, explain: 'Den viser hvilke deler av IP-en som er nettverk og hvilke som er enhet.'},
+                    {q: 'Hvilken subnettmaske er vanlig i små nettverk?', options: ['255.0.0.0', '255.255.0.0', '255.255.255.0', '0.0.0.0'], a: 2, explain: '255.255.255.0 brukes ofte i små nettverk.'},
+                    {q: 'Hva er en IP-adresse?', options: ['En enhets ID', 'Et passord', 'En filtype', 'En nettleser'], a: 0, explain: 'En IP-adresse identifiserer en enhet i et nettverk.'},
+                    {q: 'Hvilken Windows-rolle må installeres for å sette opp Active Directory?', options: ['DNS-server', 'Active Directory Domain Services (AD DS)', 'Filserver', 'Hyper-V'], a: 1, explain: 'AD DS-rollen må installeres for å kunne sette opp AD.'},
+                    {q: 'Hva må gjøres etter at AD DS-rollen er installert?', options: ['Promotere serveren til domenekontroller', 'Installere Office', 'Starte Windows Update', 'Slette temp-filer'], a: 0, explain: 'Serveren må promoveres til domenekontroller.'},
+                    {q: 'Hvordan melder man en PC inn i domenet?', options: ['Systeminnstillinger → Om → Endre til domene', 'Filutforsker', 'Via nettleser', 'Oppgavebehandling'], a: 0, explain: 'Gå til Systeminnstillinger → Om og endre til domene.'},
+                    {q: 'Hva skjer hvis nettverksdelen ikke matcher mellom to enheter?', options: ['De kommuniserer direkte', 'Trafikken må gå via en ruter', 'De bytter IP-adresser', 'De slår seg av'], a: 1, explain: 'Trafikken må via en ruter.'},
+                    {q: 'Hvor mange brukbare IP-adresser gir et /27-subnett?', options: ['6', '14', '30', '254'], a: 2, explain: '/27 gir 30 brukbare adresser.'}
+                ];
+
+                const questionsDiv = document.getElementById('questions');
+                const resultDiv = document.getElementById('result');
+                const submitBtn = document.getElementById('submitBtn');
+                const restartBtn = document.getElementById('restartBtn');
+
+                function renderQuiz() {
+                    questionsDiv.innerHTML = '';
+                    quiz.forEach((item, idx) => {
+                        const qDiv = document.createElement('div');
+                        qDiv.className = 'question';
+                        qDiv.innerHTML = `<p class="qnum">Spørsmål ${idx+1}:</p><p class="qtext">${item.q}</p>`;
+                        const opts = document.createElement('div');
+                        opts.className = 'options';
+                        item.options.forEach((opt, i) => {
+                            const id = `q${idx}_opt${i}`;
+                            const label = document.createElement('label');
+                            label.innerHTML = `<input type="radio" name="q${idx}" value="${i}" id="${id}"> ${opt}`;
+                            opts.appendChild(label);
+                        });
+                        qDiv.appendChild(opts);
+                        questionsDiv.appendChild(qDiv);
+                    });
+                }
+
+                function gradeQuiz() {
+                    let score = 0;
+                    const feedback = [];
+                    quiz.forEach((item, idx) => {
+                        const selected = document.querySelector(`input[name=q${idx}]:checked`);
+                        const correct = item.a;
+                        if (selected) {
+                            const val = Number(selected.value);
+                            if (val === correct) {
+                                score++;
+                                feedback.push({ok:true, explain:item.explain});
+                            } else {
+                                feedback.push({ok:false, explain:item.explain});
+                            }
+                        } else {
+                            feedback.push({ok:false, explain:item.explain});
+                        }
+                    });
+
+                    resultDiv.innerHTML = `<h3>Du fikk ${score} av ${quiz.length} poeng</h3>`;
+                    const ul = document.createElement('ul');
+                    ul.className = 'feedback-list';
+                    feedback.forEach((f, i) => {
+                        const li = document.createElement('li');
+                        li.className = f.ok ? 'correct' : 'incorrect';
+                        li.innerHTML = `Spørsmål ${i+1}: ${f.ok ? 'Riktig' : 'Feil'} — ${f.explain}`;
+                        ul.appendChild(li);
+                    });
+                    resultDiv.appendChild(ul);
+
+                    submitBtn.style.display = 'none';
+                    restartBtn.style.display = 'inline-block';
+                }
+
+                submitBtn.addEventListener('click', () => gradeQuiz());
+                restartBtn.addEventListener('click', () => {
+                    renderQuiz();
+                    resultDiv.innerHTML = '';
+                    submitBtn.style.display = 'inline-block';
+                    restartBtn.style.display = 'none';
+                });
+
+                renderQuiz();
+            </script>
+    </div>
+</main>
+
+<footer>
+    © 2025 IT-opplæring for VG1
+</footer>
+
+</body>
+</html>
+
